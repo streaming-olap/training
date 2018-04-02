@@ -1,0 +1,26 @@
+jobmanager.rpc.address: localhost
+jobmanager.rpc.port: 6123
+jobmanager.heap.mb: 256
+taskmanager.heap.mb: 512
+taskmanager.numberOfTaskSlots: 1
+taskmanager.memory.preallocate: false
+parallelism.default: 1
+jobmanager.web.port: 8081
+state.backend: org.apache.flink.contrib.streaming.state.RocksDBStateBackendFactory
+state.backend.fs.checkpointdir: hdfs://test/user/hadoop/username/checkpoint/flink/appname
+state.checkpoints.dir: hdfs://streaming-yarn-hdfs-gz/user/hadoop/username/savepoint/flink/appname
+yarn.maximum-failed-containers: 99999
+taskmanager.network.numberOfBuffers: 10000
+akka.watch.heartbeat.interval: 5 s
+akka.watch.heartbeat.pause: 20 s
+high-availability: zookeeper
+high-availability.zookeeper.quorum: 192.168.0.1:2181
+high-availability.zookeeper.path.root: /flink
+high-availability.zookeeper.storageDir: hdfs://test/user/hadoop/username/recovery/flink/appname
+metrics.reporters: kafka_reporter
+metrics.reporter.kafka_reporter.class: org.apache.flink.metrics.kafka.KafkaReporter
+metrics.reporter.kafka_reporter.kafka.bootstrap.servers: 192.168.0.1:9092
+metrics.reporter.kafka_reporter.kafka.key.serializer: org.apache.kafka.common.serialization.StringSerializer
+metrics.reporter.kafka_reporter.kafka.value.serializer: org.apache.kafka.common.serialization.StringSerializer
+metrics.reporter.kafka_reporter.kafka.topic: FLINK_METRICS
+taskmanager.memory.off-heap: true
