@@ -1,0 +1,44 @@
+tignore for java
+*.class
+
+#Mac files
+.DS_Store
+# python
+*.pyc
+ 
+# Package Files #
+*.jar
+*.war
+*.ear
+**/target/
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+*.log
+*.log.*
+
+## .gitignore for intellij
+*.iml
+*.ipr
+*.iws
+.idea/
+
+## .gitignore for eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+**/META-INF/
+
